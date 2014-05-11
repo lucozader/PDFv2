@@ -10,7 +10,7 @@ public class TextFixRotation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		timer = 3;
+		timer = 5;
 		transform.Rotate(90,0,0);
 		death = false;
 	}
@@ -18,6 +18,22 @@ public class TextFixRotation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		TextMesh tm = GetComponentInChildren<TextMesh>();
+		if(timer <5 && timer > 4){
+			
+			
+			tm.text = new string('5',1);
+			;
+			
+			
+		}
+		if(timer <4 && timer >3){
+			
+			
+			tm.text = new string('4',1);
+			;
+			
+			
+		}
 
 		if(timer <3 && timer > 2){
 

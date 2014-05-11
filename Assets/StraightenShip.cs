@@ -25,7 +25,7 @@ public class StraightenShip : MonoBehaviour {
 			GUIControllerFireEmblem.planetHealthLeft = GUIControllerFireEmblem.planetHealthLeft-20;//ADD LOGIC HERE TO DEDUCT HEALTH FROM PLAYER/BASE
 
 		}
-		if(transform.position.x > 5400&&once2 == false){
+		if(transform.position.x > 5900&&once2 == false){
 			DeadCount.numberDead  += 1;
 			once2 = true;
 			Destroy (gameObject);

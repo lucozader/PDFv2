@@ -24,6 +24,8 @@ public class EnemyController : MonoBehaviour {
 	public bool once5 = false;
 
 	public static float timer = 0;
+	public static float timer2 = 0;
+
 	
 	
 	
@@ -37,42 +39,74 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer = timer+1*Time.deltaTime;
+		timer2 = timer2+1*Time.deltaTime;
+
 		//Debug.Log(DeadCount.numberDead);
 		if(once == false && timer >5){
-			transform.position = new Vector3(-1200, 50, 1200);
+			transform.position = new Vector3(-1200, -340, 1200);
 			GameObject pro1  = Instantiate (spawn1,transform.position,Quaternion.identity) as GameObject;///specific one
-			//transform.position = new Vector3(-24, 8, -8);
-			//GameObject pro2  = Instantiate (spawn2,transform.position,Quaternion.identity) as GameObject;///specific one
+			pro1.GetComponent<EnemySpawner>().start = 0;
+			pro1.GetComponent<EnemySpawner>().finish  = 5;
+
+		
+
 			once = true;
+		
+			pro1.GetComponent<EnemySpawner>().totalDelay = 5;
+
+
+
 			waveActivate = 1;
 		}
 		if(once2 == false && DeadCount.numberDead==1){
 			
-			transform.position = new Vector3(-1200, 50, 1200);
+			transform.position = new Vector3(-1200, -340, 1200);
 			GameObject pro1  = Instantiate (spawn2,transform.position,Quaternion.identity) as GameObject;///specific one
-			////transform.position = new Vector3(-25, 8, 0);
-			//GameObject pro5  = Instantiate (spawn4,transform.position,Quaternion.identity) as GameObject;///specific one
+			pro1.GetComponent<EnemySpawner>().start = 0;
+			pro1.GetComponent<EnemySpawner>().finish  = 5;
+
+			GameObject pro2  = Instantiate (spawn3,transform.position,Quaternion.identity) as GameObject;///specific one
+			pro2.GetComponent<EnemySpawner>().start = 5;
+			pro2.GetComponent<EnemySpawner>().finish  = 10;
+
+			pro1.GetComponent<EnemySpawner>().totalDelay = 10;
+			pro2.GetComponent<EnemySpawner>().totalDelay = 10;
+
 			once2 = true;
 			waveActivate = 2;
 			
 		}
 		
 		
-		if(once3 == false && DeadCount.numberDead ==2){
+		if(once3 == false && DeadCount.numberDead ==3){
 			
 			
-			transform.position = new Vector3(-1200, 50, 1200);
-			GameObject pro1  = Instantiate (spawn3,transform.position,Quaternion.identity) as GameObject;///specific one
-			////transform.position = new Vector3(-25, 8, 0);
-			//GameObject pro5  = Instantiate (spawn4,transform.position,Quaternion.identity) as GameObject;///specific one
+			transform.position = new Vector3(-1200, -340, 1200);
+			GameObject pro1  = Instantiate (spawn4,transform.position,Quaternion.identity) as GameObject;///specific one
+			pro1.GetComponent<EnemySpawner>().start = 0;
+			pro1.GetComponent<EnemySpawner>().finish  = 5;
+			
+			GameObject pro2  = Instantiate (spawn5,transform.position,Quaternion.identity) as GameObject;///specific one
+			pro2.GetComponent<EnemySpawner>().start = 5;
+			pro2.GetComponent<EnemySpawner>().finish  = 10;
+
+			GameObject pro3  = Instantiate (spawn6,transform.position,Quaternion.identity) as GameObject;///specific one
+			pro3.GetComponent<EnemySpawner>().start = 10;
+			pro3.GetComponent<EnemySpawner>().finish  = 15;
+			
+			pro1.GetComponent<EnemySpawner>().totalDelay = 15;
+			pro2.GetComponent<EnemySpawner>().totalDelay = 15;
+			pro3.GetComponent<EnemySpawner>().totalDelay = 15;
+
+			
 			once3 = true;
 			waveActivate = 3;
 
 		}
-		if(once4 == false && DeadCount.numberDead ==3){
+		if(once4 == false && DeadCount.numberDead ==78){
 			
 			
-			transform.position = new Vector3(-1200, 50, 1200);
+			transform.position = new Vector3(-1200, -340, 1200);
 			GameObject pro1  = Instantiate (spawn4,transform.position,Quaternion.identity) as GameObject;///specific one
 			////transform.position = new Vector3(-25, 8, 0);
 			//GameObject pro5  = Instantiate (spawn4,transform.position,Quaternion.identity) as GameObject;///specific one
@@ -80,10 +114,10 @@ public class EnemyController : MonoBehaviour {
 			waveActivate = 4;
 			
 		}
-		if(once5 == false && DeadCount.numberDead ==5){
+		if(once5 == false && DeadCount.numberDead ==500){
 			
 			
-			transform.position = new Vector3(-1200, 50, 1200);
+			transform.position = new Vector3(-1200, -340, 1200);
 			GameObject pro1  = Instantiate (spawn5,transform.position,Quaternion.identity) as GameObject;///specific one
 			////transform.position = new Vector3(-25, 8, 0);
 			GameObject pro2  = Instantiate (spawn6,transform.position,Quaternion.identity) as GameObject;///specific one

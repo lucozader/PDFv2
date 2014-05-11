@@ -9,7 +9,7 @@ public class MouseOverChest : MonoBehaviour {
 	void Update(){
 	
 		timer = timer+1*Time.deltaTime;
-			if(timer > 3){Destroy (gameObject);}
+			if(timer > 5){Destroy (gameObject);}
 
 
 

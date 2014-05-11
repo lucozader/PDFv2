@@ -7,23 +7,28 @@ public class CreateTowerOnClicked : MonoBehaviour
 	public TowerSelector towerSelector;
 	//public static float rangeRadius;
 	public int mineDirection;
+	public int mineNumber;
 
 	void Start(){
 	}
 	void Clicked(Vector3 position)
 	{
-		if(EnergyManager.energy >= towerSelector.GetSelectedTowerCost())
+		if(EnergyManager.energy >= towerSelector.GetSelectedTowerCost()&&towerSelector.oncea==true)
 		{ //Debug.Log(position.x);
 		//	Debug.Log(position.z);
 			//if(position.x>-14 &&position.x<-9&& position.z >6 && position.z <10){
 			GameObject tower = towerSelector.GetSelectedTower();
 			GameObject pro = Instantiate(tower,transform.position + Vector3.up*50f,tower.transform.rotation) as GameObject;
-			//MineAI scriptInstance = pro.GetComponent<MineAI>();
+
+				//MineAI scriptInstance = pro.GetComponent<MineAI>();
 		   // scriptInstance.direction = mineDirection;
 			if(pro.tag == "Miner"){
 			MineAI tm = pro.GetComponent<MineAI>();///incredibly useful
-				tm.direction = mineDirection;}
+				tm.direction = mineDirection;
+				pro.GetComponent<MineAI>().pedistal = mineNumber;
+			}
 			EnergyManager.energy -= towerSelector.GetSelectedTowerCost();//}
+			towerSelector.oncea = false;
 	
 			//empty = false;
 

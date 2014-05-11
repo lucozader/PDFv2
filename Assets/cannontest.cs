@@ -13,5 +13,6 @@ public class cannontest : MonoBehaviour {
 	void Update () {
 		transform.position = new Vector3(transform.position.x,70,transform.position.z+fall*Time.deltaTime);
 		fall = fall -10;
+		if(transform.position.z<1770){Destroy (gameObject);}
 	}
 }

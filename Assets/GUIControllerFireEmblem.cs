@@ -7,10 +7,18 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 	public AudioClip coinSound;
 	public AudioClip multiSound;
 	public static int planetHealthLeft = 100;
-	public GameObject ball;///template		
+	public GameObject ball;///template	
+	public bool boolFollow = false;
+	
+	float xx;
+	float yy;
+
+
 	//public static float range = 100;
 	public static float ranger = 1;
 	public static int highScorePDF;
+	public GameObject destroyIcon;
+	GameObject pro1;
 	
 	public static float funds = 500;
 	public static float attack = 100;
@@ -26,19 +34,32 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 	float y = 10f;
 	float w = 100f;
 	float h = 40f;
+	GameObject temp;
 	
 	
 	
 	void Start()
 	{
+		pro1  = Instantiate (destroyIcon,transform.position,Quaternion.identity) as GameObject;///specific one
+
 		//textbox = "Hello, Defend the Earth from Dastardly General Harris's forces!";
 		//	audio.PlayOneShot(openingSound);
 		highScorePDF = 0;
+
 		
 	}
 	
 	
 	void Update(){
+		xx = Input.mousePosition.x;
+		yy = Input.mousePosition.y;
+		Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(xx, yy, 12));
+		if(boolFollow == false){
+			Destroy (pro1);
+		}
+		if(boolFollow == true){
+			pro1.transform.position = pos;}
+
 		if(planetHealthLeft <= 0)
 		{	planetHealthLeft = 100;
 			funds = 1000;
@@ -80,6 +101,17 @@ public class GUIControllerFireEmblem : MonoBehaviour {
 			EnemyController.timer = 0;
 			
 			Application.LoadLevel("startscene");
+		}
+
+		GUI.Box(new Rect(x+100,y,w,h), "Destroy Tower");
+		if(GUI.Button(new Rect(x+110,y+20,80,h-20),"Destroy"))
+		{
+			Destroy(pro1);
+			pro1  = Instantiate (destroyIcon,transform.position,Quaternion.identity) as GameObject;///specific one
+			boolFollow = true;
+
+
+
 		}
 		
 		//GUI.Box(new Rect(x,y,w,h), "Range %");

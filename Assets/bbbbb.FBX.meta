@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: fa56ca167f6849747b445782d7437253
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: basket
+    100002: //RootNode
+    100004: cannon
+    100006: cannon 1
+    100008: cannon 2
+    100010: cannon 3
+    100012: cannon 4
+    100014: cannon 5
+    100016: cannon 6
+    100018: cannon 7
+    100020: cannon 8
+    100022: cannon 9
+    100024: ropes
+    100026: sail00
+    100028: sail007
+    100030: sail02
+    100032: sail04
+    100034: sail06
+    100036: ship
+    100038: ship_MeshPart0
+    100040: ship_MeshPart1
+    400000: basket
+    400002: //RootNode
+    400004: cannon
+    400006: cannon 1
+    400008: cannon 2
+    400010: cannon 3
+    400012: cannon 4
+    400014: cannon 5
+    400016: cannon 6
+    400018: cannon 7
+    400020: cannon 8
+    400022: cannon 9
+    400024: ropes
+    400026: sail00
+    400028: sail007
+    400030: sail02
+    400032: sail04
+    400034: sail06
+    400036: ship
+    400038: ship_MeshPart0
+    400040: ship_MeshPart1
+    2300000: basket
+    2300002: cannon
+    2300004: cannon 1
+    2300006: cannon 2
+    2300008: cannon 3
+    2300010: cannon 4
+    2300012: cannon 5
+    2300014: cannon 6
+    2300016: cannon 7
+    2300018: cannon 8
+    2300020: cannon 9
+    2300022: ropes
+    2300024: sail00
+    2300026: sail007
+    2300028: sail02
+    2300030: sail04
+    2300032: sail06
+    2300034: ship_MeshPart0
+    2300036: ship_MeshPart1
+    3300000: basket
+    3300002: cannon
+    3300004: cannon 1
+    3300006: cannon 2
+    3300008: cannon 3
+    3300010: cannon 4
+    3300012: cannon 5
+    3300014: cannon 6
+    3300016: cannon 7
+    3300018: cannon 8
+    3300020: cannon 9
+    3300022: ropes
+    3300024: sail00
+    3300026: sail007
+    3300028: sail02
+    3300030: sail04
+    3300032: sail06
+    3300034: ship_MeshPart0
+    3300036: ship_MeshPart1
+    4300000: ship_MeshPart0
+    4300002: ship_MeshPart1
+    4300004: basket
+    4300006: sail06
+    4300008: sail04
+    4300010: sail00
+    4300012: sail02
+    4300014: cannon
+    4300016: cannon
+    4300018: cannon
+    4300020: cannon
+    4300022: cannon
+    4300024: ropes
+    4300026: cannon
+    4300028: cannon
+    4300030: cannon
+    4300032: cannon
+    4300034: cannon
+    4300036: sail007
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

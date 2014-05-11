@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LargeEnemy : MonoBehaviour {
+public class LargeEnemy : MonoBehaviour {// no slow
 	//public Texture2D test1;
 	//	public Texture2D test2;
 	public GameObject explosion;
@@ -11,6 +11,7 @@ public class LargeEnemy : MonoBehaviour {
 	public GameObject chest;
 	bool oncea = false;
 	bool onceb = false;
+
 	bool ready = true;
 	float timer = 0;
 	public GameObject slime;
@@ -23,21 +24,7 @@ public class LargeEnemy : MonoBehaviour {
 	void Update ()
 	{
 		
-		if(timer <5&&oncea == true){
-			ShipSmoothMove scriptInstance = gameObject.GetComponent<ShipSmoothMove>();
-			scriptInstance.maxSpeed = scriptInstance.maxSpeed*0.5f;
-			
-			
-			oncea = false;
-		}
-		if(timer>5&&onceb == true){
-			ShipSmoothMove scriptInstance = gameObject.GetComponent<ShipSmoothMove>();
-			scriptInstance.maxSpeed = scriptInstance.maxSpeed*2f;
-			timer = 0;
-			ready = true;
-			onceb = false;
-		}
-		timer = timer+1*Time.deltaTime;
+
 		
 	}
 	
@@ -81,7 +68,7 @@ public class LargeEnemy : MonoBehaviour {
 		}
 		
 		if(health <= 0&& once == false)
-		{	GUIControllerFireEmblem.highScorePDF = GUIControllerFireEmblem.highScorePDF + 1000;// add 1000 to high score
+		{	GUIControllerFireEmblem.highScorePDF = GUIControllerFireEmblem.highScorePDF + 1250;// add 1000 to high score
 			DeadCount.numberDead+= 1;
 			Destroy(collision.collider.gameObject);
 			once = true;

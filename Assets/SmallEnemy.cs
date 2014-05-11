@@ -11,9 +11,12 @@ public class SmallEnemy : MonoBehaviour {
 	public GameObject chest;
 	bool oncea = false;
 	bool onceb = false;
+	bool oncec =  false;
 	bool ready = true;//
 	float timer = 0;
-	//public GameObject slime;
+	public GameObject fleas;
+	GameObject flea;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -22,21 +25,37 @@ public class SmallEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		DisplayRemainingShipHealth scriptInstance1 = gameObject.GetComponent<DisplayRemainingShipHealth>();
+		scriptInstance1.destroy = true;
 		
-		if(timer <5&&oncea == true){
+		if(timer <5){
+				if(oncea == true){
 			ShipSmoothMove scriptInstance = gameObject.GetComponent<ShipSmoothMove>();
 			scriptInstance.maxSpeed = scriptInstance.maxSpeed*0.5f;
+				oncea = false;
+				oncec = true;
+				}
+		
+			if(oncec ==true){flea.transform.position = transform.position;}
+
 			
-			
-			oncea = false;
+
+		
 		}
+
+	
+
 		if(timer>5&&onceb == true){
 			ShipSmoothMove scriptInstance = gameObject.GetComponent<ShipSmoothMove>();
 			scriptInstance.maxSpeed = scriptInstance.maxSpeed*2f;
+			Destroy (flea);
+
 			timer = 0;
 			ready = true;
 			onceb = false;
+			oncec = false;
 		}
+
 		timer = timer+1*Time.deltaTime;
 		
 	}
@@ -51,7 +70,7 @@ public class SmallEnemy : MonoBehaviour {
 		if(collision.collider.tag == "RapidBullet")
 		{
 			//health= health - (health+ increase1*(health/100));
-			health = health-1;
+			health = health-2;
 
 			Destroy(collision.collider.gameObject);
 		}
@@ -64,7 +83,8 @@ public class SmallEnemy : MonoBehaviour {
 			Destroy(collision.collider.gameObject);
 			
 			if(ready == true){
-				//GameObject slowdown = Instantiate(slime, transform.position,transform.rotation) as GameObject;
+				flea = Instantiate(fleas,transform.position,Quaternion.identity) as GameObject;
+				timer = 0;
 				oncea = true;
 				onceb = true;
 				ready = false;}
@@ -82,7 +102,7 @@ public class SmallEnemy : MonoBehaviour {
 		}
 		
 		if(health <= 0&& once == false)
-		{	GUIControllerFireEmblem.highScorePDF = GUIControllerFireEmblem.highScorePDF + 1000;// add 1000 to high score
+		{	GUIControllerFireEmblem.highScorePDF = GUIControllerFireEmblem.highScorePDF + 750;// add 1000 to high score
 			DeadCount.numberDead+= 1;
 			Destroy(collision.collider.gameObject);
 			once = true;

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class BasicEnemy : MonoBehaviour {
+public class BasicEnemy : MonoBehaviour {//no slow
 	//public Texture2D test1;
 //	public Texture2D test2;
 	public GameObject explosion;
@@ -11,9 +11,12 @@ public class BasicEnemy : MonoBehaviour {
 	public GameObject chest;
 	bool oncea = false;
 	bool onceb = false;
-	bool ready = true;
+	bool oncec =  false;
+	bool ready = true;//
 	float timer = 0;
-	public GameObject slime;
+	public GameObject fleas;
+	GameObject flea;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -23,20 +26,35 @@ public class BasicEnemy : MonoBehaviour {
 	void Update ()
 	{
 
-		if(timer <5&&oncea == true){
-			ShipSmoothMove scriptInstance = gameObject.GetComponent<ShipSmoothMove>();
-			scriptInstance.maxSpeed = scriptInstance.maxSpeed*0.5f;
-
-
-			oncea = false;
+		
+		if(timer <5){
+			if(oncea == true){
+				ShipSmoothMove scriptInstance = gameObject.GetComponent<ShipSmoothMove>();
+				scriptInstance.maxSpeed = scriptInstance.maxSpeed*0.5f;
+				oncea = false;
+				oncec = true;
+			}
+			
+			if(oncec ==true){flea.transform.position = transform.position;}
+			
+			
+			
+			
 		}
+		
+		
+		
 		if(timer>5&&onceb == true){
 			ShipSmoothMove scriptInstance = gameObject.GetComponent<ShipSmoothMove>();
 			scriptInstance.maxSpeed = scriptInstance.maxSpeed*2f;
+			Destroy (flea);
+			
 			timer = 0;
 			ready = true;
 			onceb = false;
+			oncec = false;
 		}
+		
 		timer = timer+1*Time.deltaTime;
 	
 	}

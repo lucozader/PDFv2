@@ -2,7 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class SelectTowerOnClicked : MonoBehaviour {
-	
+	public static float xtest;
+	public static float ytest;
+	//public RaycastHit hit; 
 	public GameObject towerSelector;
 
 	// Use this for initialization
@@ -12,8 +14,19 @@ public class SelectTowerOnClicked : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+
 	
-	}
+		
+
+			
+			
+			
+		}
+
+	
+
 	
 	void Clicked()
 	{

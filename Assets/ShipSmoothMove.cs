@@ -4,13 +4,14 @@ using System.Collections.Generic;
 
 
 public class ShipSmoothMove : MonoBehaviour {
-	
+	public float heightOffset = -450;
 	public Vector3 velocity = Vector3.zero;
 	public Vector3 force = Vector3.zero;
 	
 	public float maxSpeed = 200.0f;
 	public float mass = 1.0f;
-	
+	bool oncerrr= true;
+	bool oncerrrr=true;
 	
 	public GameObject[] pathPoints;
 	
@@ -18,6 +19,9 @@ public class ShipSmoothMove : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		//pathPoints = inputPathPoints;
+	
+	
 		//transform.Rotate(270, 180, 0);
 
 		maxSpeed = 200.0f;
@@ -26,6 +30,9 @@ public class ShipSmoothMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		for(int i = 0; i<pathPoints.Length;i++){
+			Vector3 victor = new Vector3(pathPoints[i].transform.position.x,heightOffset,pathPoints[i].transform.position.z);
+			pathPoints[i].transform.position = victor;}
 
 		//if (pathToUse == 1)
 		force += FollowPath(pathPoints);
@@ -74,6 +81,11 @@ public class ShipSmoothMove : MonoBehaviour {
 	}
 	void SetPathPoints(GameObject[] inputPathPoints)
 	{
-		pathPoints = inputPathPoints;
-	}
-}
+	if(oncerrr ==true){
+			pathPoints = inputPathPoints;
+			oncerrr = false;}
+
+		
+
+	
+	}}

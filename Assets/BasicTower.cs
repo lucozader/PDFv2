@@ -11,8 +11,17 @@ public class BasicTower : MonoBehaviour {
 	bool once = false;
 	// Use this for initialization
 	bool once1 = false;
+	GameObject temp;
+	GameObject temp1;
+
+
 	void Start ()
 	{
+		temp = GameObject.Find("GuiDisplay");	
+		temp1 = GameObject.Find ("UICamera");
+
+
+
 		InvokeRepeating("SpawnBullet",0,fireRate);
 	}
 			
@@ -56,8 +65,25 @@ public class BasicTower : MonoBehaviour {
 	void OnMouseExit(){
 
 		Destroy(GameObject.FindWithTag("Range"));
-		Destroy(GameObject.FindWithTag("Range"));
 
+	}
+	void OnMouseUp(){
+		int i = 0;
+		//funds = funds + funds for tower type/2//from 
+		if(temp.GetComponent<GUIControllerFireEmblem>().boolFollow  == true){
+			temp.GetComponent<GUIControllerFireEmblem>().boolFollow  = false;
+			if(gameObject.tag == "RapiddTower"){
+				i = 2;
+			}
+			if(gameObject.tag == "CannonTower"){
+				i = 0;
+			}
+			if(gameObject.tag == "SlowTower"){
+				i = 1;
+			}
+			EnergyManager.energy = EnergyManager.energy + 0.5f*temp1.GetComponent<TowerSelector>().towerCosts[i];
+			Destroy (gameObject);
+			}
 	}
 
 
