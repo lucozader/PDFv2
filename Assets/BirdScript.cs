@@ -19,7 +19,8 @@ public class BirdScript : MonoBehaviour {
 
 		timer = timer+Time.deltaTime;
 		if(timer > 60){
-			 flock1= Instantiate(flock,victor,Quaternion.identity) as GameObject;timer = 0;}
+			 flock1= Instantiate(flock,victor,Quaternion.identity) as GameObject;
+			timer = 0;}
 		if(transform.position.x<0){
 			Destroy(flock1);
 				}

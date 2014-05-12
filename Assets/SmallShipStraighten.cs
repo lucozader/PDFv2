@@ -25,7 +25,7 @@ public class SmallShipStraighten : MonoBehaviour {
 		if(once == false){
 			once = true;}
 		if(transform.position.x > 5200&&once1 == false){
-			Vector3 victor = new Vector3(transform.position.x-200,transform.position.y,transform.position.z-200);
+			Vector3 victor = new Vector3(transform.position.x-200,70f,transform.position.z-200);
 			test  = Instantiate (bullet1,victor,Quaternion.identity) as GameObject;///specific one
 			once1 = true;
 			GUIControllerFireEmblem.planetHealthLeft = GUIControllerFireEmblem.planetHealthLeft-20;//ADD LOGIC HERE TO DEDUCT HEALTH FROM PLAYER/BASE
